@@ -1,9 +1,10 @@
 import { Button, Heading, Paragraph } from "components/common";
 import { useNotification } from "hooks";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { cancelOrder } from "redux/slices/dashboard";
 import { useAppDispatch } from "redux/store/hooks";
 import { TOrder } from "types";
+import EditOrder from "./EditOrder";
 
 interface DefaultProps extends Omit<TOrder, "id"> {
   orderId: number;
@@ -19,7 +20,16 @@ const OrderCard: React.FC<DefaultProps> = ({
 }) => {
   const dispatch = useAppDispatch();
   const { notifySuccess } = useNotification();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  // handling order cancel with redux & success message
   const onCancelOrder = useCallback(() => {
     dispatch(cancelOrder(orderId));
     notifySuccess("Order canceled successfully");
@@ -31,7 +41,7 @@ const OrderCard: React.FC<DefaultProps> = ({
         <Paragraph className="bg-zinc-100 py-1 px-2 text-sm font-medium rounded-3xl">
           {status}
         </Paragraph>
-        <div className="cursor-pointer">
+        <div className="cursor-pointer" onClick={openModal}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
@@ -60,6 +70,12 @@ const OrderCard: React.FC<DefaultProps> = ({
           <Heading size="sm">${price.toFixed(2)}</Heading>
         </div>
       </div>
+      <EditOrder
+        orderId={orderId}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        status={status}
+      />
     </div>
   );
 };
