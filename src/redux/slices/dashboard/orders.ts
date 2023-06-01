@@ -16,8 +16,15 @@ export const orders = createSlice({
         orders: action.payload,
       };
     },
+    // Cancel order & remove from redux store
+    cancelOrder: (state, action: PayloadAction<number>) => {
+      return {
+        ...state,
+        orders: state.orders.filter((order) => order.id !== action.payload),
+      };
+    },
   },
 });
 
-export const { setOrders } = orders.actions;
+export const { setOrders, cancelOrder } = orders.actions;
 export default orders.reducer;
