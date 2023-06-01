@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { TOrder, TStatus } from "types";
+import { TOrder, TSort, TStatus } from "types";
 
 const initialState = {
   orders: [] as TOrder[],
@@ -41,8 +41,38 @@ export const orders = createSlice({
         }),
       };
     },
+    // Filter order by status
+    filterOrders: (state, action: PayloadAction<TStatus>) => {
+      const updatedOrders =
+        action.payload === "All"
+          ? state.orders
+          : state.orders.filter((order) => order.status === action.payload);
+      return {
+        ...state,
+        orders: updatedOrders,
+      };
+    },
+    // Sort order ascending & descending order
+    sortOrders: (state, action: PayloadAction<TSort>) => {
+      const updatedOrders = [...state.orders].sort((a, b) => {
+        if (action.payload === "desc") {
+          return a.price - b.price;
+        }
+        return b.price - a.price;
+      });
+      return {
+        ...state,
+        orders: updatedOrders,
+      };
+    },
   },
 });
 
-export const { setOrders, cancelOrder, updateOrderStatus } = orders.actions;
+export const {
+  setOrders,
+  cancelOrder,
+  updateOrderStatus,
+  filterOrders,
+  sortOrders,
+} = orders.actions;
 export default orders.reducer;
