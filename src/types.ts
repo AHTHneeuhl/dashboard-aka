@@ -1,4 +1,11 @@
-export type TStatus = "Confirmed" | "Delivered" | "Refunded" | "Pending";
+export type TStatus =
+  | "Confirmed"
+  | "Delivered"
+  | "Refunded"
+  | "Pending"
+  | "All";
+
+export type TSort = "asc" | "desc";
 
 export interface TOrder {
   id: number;
