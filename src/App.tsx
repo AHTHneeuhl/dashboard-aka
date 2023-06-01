@@ -1,5 +1,5 @@
 import AppLayout from "layout/AppLayout";
-import { DashbaordPage } from "pages";
+import { CartPage, DashbaordPage, NotificationPage } from "pages";
 import { Route, Routes } from "react-router-dom";
 
 const App: React.FC = () => {
@@ -7,6 +7,8 @@ const App: React.FC = () => {
     <AppLayout>
       <Routes>
         <Route path="/" element={<DashbaordPage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/notifications" element={<NotificationPage />} />
       </Routes>
     </AppLayout>
   );

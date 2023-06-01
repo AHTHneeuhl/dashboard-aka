@@ -2,7 +2,7 @@ import { Featured, NewArrivals, Search } from "components/dashboard";
 
 const Dashboard: React.FC = () => {
   return (
-    <main>
+    <main className="my-10">
       <Search />
       <Featured />
       <NewArrivals />

@@ -8,7 +8,7 @@ const AppLayout: React.FC<DefaultProps> = ({ children }) => {
   return (
     <div className="relative w-full">
       <Sidebar />
-      <div className="ml-40 px-12 py-10">{children}</div>
+      <div className="ml-48 px-12">{children}</div>
     </div>
   );
 };
