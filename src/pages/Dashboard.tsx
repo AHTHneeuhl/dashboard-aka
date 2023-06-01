@@ -1,11 +1,9 @@
-import { Featured, NewArrivals, Search } from "components/dashboard";
+import { OrderList } from "components/dashboard";
 
 const Dashboard: React.FC = () => {
   return (
     <main className="my-10">
-      <Search />
-      <Featured />
-      <NewArrivals />
+      <OrderList />
     </main>
   );
 };
