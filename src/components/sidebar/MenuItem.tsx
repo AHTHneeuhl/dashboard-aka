@@ -1,15 +1,26 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 interface DefaultProps {
   path: string;
   title: string;
+  icon: React.FC<React.SVGProps<SVGSVGElement>>;
 }
 
-const MenuItem: React.FC<DefaultProps> = ({ path, title }) => {
+const MenuItem: React.FC<DefaultProps> = ({ path, title, icon: Icon }) => {
+  const { pathname } = useLocation();
   return (
-    <div className="hover:bg-teal-700 hover:text-white rounded-md py-1 px-3 w-full transition cursor-pointer">
-      <NavLink to={path}>{title}</NavLink>
-    </div>
+    <NavLink
+      to={path}
+      className={`${
+        pathname === path
+          ? "bg-zinc-100 text-neutral-700 rounded-md py-1 px-3"
+          : "bg-transparent"
+      }  w-full transition cursor-pointer text-neutral-600 py-1 px-3`}
+    >
+      <div className="flex flex-row items-center gap-2 w-full transition">
+        <Icon /> {title}
+      </div>
+    </NavLink>
   );
 };
 
