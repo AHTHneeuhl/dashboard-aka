@@ -1,7 +1,7 @@
 import { Placeholer } from "components/common";
 
-const Notification: React.FC = () => {
+const Reports: React.FC = () => {
   return <Placeholer />;
 };
 
-export default Notification;
+export default Reports;

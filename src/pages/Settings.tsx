@@ -1,7 +1,7 @@
 import { Placeholer } from "components/common";
 
-const Cart: React.FC = () => {
+const Settings: React.FC = () => {
   return <Placeholer />;
 };
 
-export default Cart;
+export default Settings;
