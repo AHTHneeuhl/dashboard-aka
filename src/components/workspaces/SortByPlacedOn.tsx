@@ -3,7 +3,7 @@ import { sortOrders } from "redux/slices/dashboard";
 import { useAppDispatch } from "redux/store/hooks";
 import { TSort } from "types";
 
-const SortByAmount: React.FC = () => {
+const SortByPlacedOn: React.FC = () => {
   const dispatch = useAppDispatch();
   const [order, setOrder] = useState<TSort>("asc");
 
@@ -17,7 +17,7 @@ const SortByAmount: React.FC = () => {
   }, [dispatch, order]);
 
   return (
-    <div className="w-full col-start-5">
+    <div className="w-full col-start-6">
       <select
         name="amount"
         id="amount"
@@ -25,11 +25,21 @@ const SortByAmount: React.FC = () => {
         onChange={handleOrderChange}
         className="p-1 rounded-md text-sm w-full bg-slate-100 outline-none"
       >
-        <option value="asc">High</option>
-        <option value="desc">Low</option>
+        <option
+          value="asc"
+          className="bg-white p-2 hover:text-neutral-700 text-sm"
+        >
+          ASC
+        </option>
+        <option
+          value="desc"
+          className="bg-white p-2 hover:text-neutral-700 text-sm"
+        >
+          DESC
+        </option>
       </select>
     </div>
   );
 };
 
-export default SortByAmount;
+export default SortByPlacedOn;

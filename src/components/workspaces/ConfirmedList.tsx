@@ -5,7 +5,7 @@ const ConfirmedList: React.FC = () => {
   const orders = useAppSelector((state) => state.dashboard.orders.orders);
 
   return (
-    <div className="flex flex-row flex-wrap items-center gap-1 h-[56vh] overflow-auto pr-2">
+    <div className="flex flex-col gap-1 h-[56vh] overflow-auto pr-2">
       {orders.map(
         ({ id, title, price, placedOn, logo, subtitle, quantity }) => (
           <OrderItem

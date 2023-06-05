@@ -1,12 +1,16 @@
 import { Heading } from "components/common";
 
-const Issued: React.FC = () => {
+type TDefaultProps = {
+  total: number;
+};
+
+const ConfirmedHeader: React.FC<TDefaultProps> = ({ total }) => {
   return (
-    <div className="flex flex-row items-center justify-between rounded-3xl border border-neutral-200 p-4">
+    <div className="flex flex-row items-center justify-between">
       <div className="flex flex-row items-center gap-2">
-        <Heading size="sm">Issues</Heading>
+        <Heading size="sm">Confirmed</Heading>
         <Heading size="sm" variant="secondary" className="text-neutral-500">
-          21
+          {total}
         </Heading>
       </div>
       <div className="p-1 cursor-pointer rounded-full bg-neutral-100">
@@ -18,15 +22,11 @@ const Issued: React.FC = () => {
           stroke="currentColor"
           className="w-5 h-5"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M12 6v12m6-6H6"
-          />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M18 12H6" />
         </svg>
       </div>
     </div>
   );
 };
 
-export default Issued;
+export default ConfirmedHeader;

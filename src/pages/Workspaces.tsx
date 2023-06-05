@@ -4,7 +4,7 @@ const Workspaces: React.FC = () => {
   return (
     <main>
       <TopHeader />
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-4">
         <Confirmed />
         <Issued />
       </div>
