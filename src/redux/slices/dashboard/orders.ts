@@ -40,14 +40,14 @@ export const orders = createSlice({
     },
     // Filter order by status
     filterOrders: (state, action: PayloadAction<TStatus>) => {
-      // const updatedOrders =
-      //   action.payload === "All"
-      //     ? state.orders
-      //     : state.orders.filter((order) => order.status === action.payload);
-      // return {
-      //   ...state,
-      //   orders: updatedOrders,
-      // };
+      const updatedOrders =
+        action.payload === "All"
+          ? state.orders
+          : state.orders.filter((order) => order.status === action.payload);
+      return {
+        ...state,
+        orders: updatedOrders,
+      };
     },
     // Sort order ascending & descending order
     sortOrders: (state, action: PayloadAction<TSort>) => {
@@ -56,6 +56,23 @@ export const orders = createSlice({
           return a.price - b.price;
         }
         return b.price - a.price;
+      });
+      return {
+        ...state,
+        orders: updatedOrders,
+      };
+    },
+    sortByPlacedOn: (state, action: PayloadAction<TSort>) => {
+      const updatedOrders = [...state.orders].sort((a, b) => {
+        const dateA = new Date(a.placedOn);
+        const dateB = new Date(b.placedOn);
+        if (action.payload === "desc" && dateA < dateB) {
+          return -1;
+        }
+        if (action.payload === "asc" && dateA > dateB) {
+          return +1;
+        }
+        return 0;
       });
       return {
         ...state,

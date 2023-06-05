@@ -3,7 +3,9 @@ import { useState } from "react";
 import { TOrder } from "types";
 import EditOrder from "./EditOrder";
 
-interface DefaultProps extends Omit<TOrder, "id"> {
+import { ReactComponent as SelectIcon } from "assets/icons/select.svg";
+
+interface DefaultProps extends Omit<TOrder, "id" | "status"> {
   orderId: number;
 }
 const OrderItem: React.FC<DefaultProps> = ({
@@ -26,8 +28,13 @@ const OrderItem: React.FC<DefaultProps> = ({
 
   return (
     <div className="grid grid-cols-7 items-center w-full hover:bg-zinc-50 transition rounded-md p-2 cursor-pointer">
-      <div className="overflow-hidden rounded-xl w-20 h-12 opacity-75">
-        <img src={logo} alt="logo" className="h-full w-full object-cover" />
+      <div className="flex flex-row items-center gap-4 overflow-hidden">
+        <SelectIcon />
+        <img
+          src={logo}
+          alt="logo"
+          className="rounded-xl w-20 h-12 opacity-75 object-cover"
+        />
       </div>
       <div className="flex col-start-2 col-end-4 flex-col items-start justify-between">
         <Heading size="sm" className="text-md">

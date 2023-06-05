@@ -20,21 +20,18 @@ const FilterByStatus: React.FC = () => {
   }, [dispatch, selectedStatus]);
 
   return (
-    <div className="flex flex-row gap-2 items-center mb-2">
-      <label htmlFor="status" className="text-sm text-neutral-700 font-medium">
-        Filter By Status
-      </label>
+    <div className="col-start-4">
       <select
         name="status"
         id="status"
         value={selectedStatus}
         onChange={handleStatusChange}
-        className="p-1 rounded-md outline-none text-sm"
+        className="p-1 rounded-md outline-none bg-slate-100 w-full text-sm"
       >
         <option value="All">All</option>
         <option value="Pending">Pending</option>
         <option value="Confirmed">Confirmed</option>
-        <option value="Refunded">Refunded</option>
+        <option value="Refunded">Refund Completed (30d)</option>
         <option value="Delivered">Delivered</option>
       </select>
     </div>
