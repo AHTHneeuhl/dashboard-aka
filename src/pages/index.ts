@@ -1,3 +1,3 @@
-export { default as DashbaordPage } from "./Dashboard";
-export { default as CartPage } from "./Cart";
-export { default as NotificationPage } from "./Notification";
+export { default as WorkspacePage } from "./Workspaces";
+export { default as ReportPage } from "./Reports";
+export { default as SettingPage } from "./Settings";

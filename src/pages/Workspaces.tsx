@@ -1,6 +1,6 @@
 import { FilterByStatus, OrderList, SortByAmount } from "components/dashboard";
 
-const Dashboard: React.FC = () => {
+const Workspaces: React.FC = () => {
   return (
     <main className="my-10">
       <div className="flex flex-row items-center gap-5">
@@ -12,4 +12,4 @@ const Dashboard: React.FC = () => {
   );
 };
 
-export default Dashboard;
+export default Workspaces;

@@ -1,22 +1,22 @@
-import { ReactComponent as DashboardIcon } from "assets/icons/home.svg";
-import { ReactComponent as CartIcon } from "assets/icons/cart.svg";
-import { ReactComponent as NotificationIcon } from "assets/icons/notification.svg";
+import { ReactComponent as ReportIcon } from "assets/icons/reports.svg";
+import { ReactComponent as SettingIcon } from "assets/icons/settings.svg";
+import { ReactComponent as WorkspacesIcon } from "assets/icons/workspaces.svg";
 
 const sidebarMenu = [
   {
-    title: "Dashboard",
+    title: "Reports",
+    path: "/reports",
+    icon: ReportIcon,
+  },
+  {
+    title: "Workspaces",
     path: "/",
-    icon: DashboardIcon,
+    icon: WorkspacesIcon,
   },
   {
-    title: "Cart",
-    path: "/cart",
-    icon: CartIcon,
-  },
-  {
-    title: "Notifications",
-    path: "/notifications",
-    icon: NotificationIcon,
+    title: "Settings",
+    path: "/settings",
+    icon: SettingIcon,
   },
 ];
 
