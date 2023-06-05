@@ -1,13 +1,13 @@
-import { FilterByStatus, OrderList, SortByAmount } from "components/dashboard";
+import { Confirmed, Issued, TopHeader } from "components/workspaces";
 
 const Workspaces: React.FC = () => {
   return (
-    <main className="my-10">
-      <div className="flex flex-row items-center gap-5">
-        <FilterByStatus />
-        <SortByAmount />
+    <main>
+      <TopHeader />
+      <div className="flex flex-col gap-6">
+        <Confirmed />
+        <Issued />
       </div>
-      <OrderList />
     </main>
   );
 };

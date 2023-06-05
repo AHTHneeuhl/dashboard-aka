@@ -1,7 +1,8 @@
 [
   {
     "id": 1,
-    "title": "Shoe",
+    "title": "McDonalds",
+    "subtitle": "Big Mac Jumbo",
     "logo": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
     "status": "Confirmed",
     "quantity": 5,
@@ -10,34 +11,38 @@
   },
   {
     "id": 2,
-    "title": "Shirt",
+    "title": "Tesla",
+    "subtitle": "Model X",
     "logo": "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
     "status": "Pending",
     "quantity": 3,
-    "price": 29.99,
+    "price": 3229.99,
     "placedOn": "2023-05-31"
   },
   {
     "id": 3,
-    "title": "Hat",
+    "title": "GM",
+    "subtitle": "Alternator Car Parts",
     "logo": "https://images.unsplash.com/photo-1521369909029-2afed882baee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
     "status": "Pending",
     "quantity": 2,
-    "price": 19.99,
+    "price": 219.99,
     "placedOn": "2023-05-29"
   },
   {
     "id": 4,
-    "title": "Pants",
+    "title": "AARP",
+    "subtitle": "Health Care Package Adult A1",
     "logo": "https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
     "status": "Confirmed",
     "quantity": 8,
-    "price": 39.99,
+    "price": 539.99,
     "placedOn": "2023-05-28"
   },
   {
     "id": 5,
-    "title": "Dress",
+    "title": "Disney",
+    "subtitle": "Renewal Subscription",
     "logo": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
     "status": "Pending",
     "quantity": 1,
@@ -46,7 +51,8 @@
   },
   {
     "id": 6,
-    "title": "Jacket",
+    "title": "Prime Theraputics",
+    "subtitle": "Natural Oil",
     "logo": "https://images.unsplash.com/photo-1544022613-e87ca75a784a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8amFja2V0fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
     "status": "Confirmed",
     "quantity": 4,
@@ -55,11 +61,32 @@
   },
   {
     "id": 7,
-    "title": "Scarf",
+    "title": "Match.com",
+    "subtitle": "Renewal Subscription",
     "logo": "https://images.unsplash.com/photo-1485527691629-8e370684924c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNjYXJmfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
     "status": "Confirmed",
     "quantity": 6,
-    "price": 24.99,
+    "price": 259.99,
     "placedOn": "2023-05-24"
+  },
+  {
+    "id": 8,
+    "title": "Chevy",
+    "subtitle": "FX235A",
+    "logo": "https://images.unsplash.com/photo-1617788138017-80ad40651399?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHRlc2xhfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+    "status": "Confirmed",
+    "quantity": 6,
+    "price": 249.99,
+    "placedOn": "2023-06-06"
+  },
+  {
+    "id": 9,
+    "title": "GM",
+    "subtitle": "Car Parts AJZ89B",
+    "logo": "https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+    "status": "Confirmed",
+    "quantity": 60,
+    "price": 2455.99,
+    "placedOn": "2023-06-06"
   }
 ]
