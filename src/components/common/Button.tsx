@@ -9,6 +9,7 @@ export const buttonVariants = cva(
       variant: {
         default:
           "bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-200 dark:text-slate-900 dark:hover:bg-slate-100",
+        action: "bg-blue-600 text-white hover:bg-blue-700 transition",
       },
       size: {
         default: "h-10 py-2 px-5",

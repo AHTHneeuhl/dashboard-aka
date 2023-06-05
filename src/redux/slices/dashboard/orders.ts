@@ -23,34 +23,31 @@ export const orders = createSlice({
         orders: state.orders.filter((order) => order.id !== action.payload),
       };
     },
-    // Update order status
-    updateOrderStatus: (
+    editOrderQuantity: (
       state,
-      action: PayloadAction<{ id: number; status: TStatus }>
+      action: PayloadAction<{ id: number; quantity: number }>
     ) => {
-      return {
-        ...state,
-        orders: state.orders.map((order) => {
-          if (order.id === action.payload.id) {
-            return {
-              ...order,
-              status: action.payload.status,
-            };
-          }
-          return order;
-        }),
-      };
-    },
-    // Filter order by status
-    filterOrders: (state, action: PayloadAction<TStatus>) => {
-      const updatedOrders =
-        action.payload === "All"
-          ? state.orders
-          : state.orders.filter((order) => order.status === action.payload);
+      const updatedOrders = state.orders.map((order) => {
+        if (order.id === action.payload.id) {
+          return { ...order, quantity: action.payload.quantity };
+        }
+        return order;
+      });
       return {
         ...state,
         orders: updatedOrders,
       };
+    },
+    // Filter order by status
+    filterOrders: (state, action: PayloadAction<TStatus>) => {
+      // const updatedOrders =
+      //   action.payload === "All"
+      //     ? state.orders
+      //     : state.orders.filter((order) => order.status === action.payload);
+      // return {
+      //   ...state,
+      //   orders: updatedOrders,
+      // };
     },
     // Sort order ascending & descending order
     sortOrders: (state, action: PayloadAction<TSort>) => {
@@ -71,7 +68,7 @@ export const orders = createSlice({
 export const {
   setOrders,
   cancelOrder,
-  updateOrderStatus,
+  editOrderQuantity,
   filterOrders,
   sortOrders,
 } = orders.actions;

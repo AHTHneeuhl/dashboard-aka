@@ -1,22 +1,25 @@
 import { Button } from "components/common";
 import { useCallback, useEffect, useState } from "react";
-import { updateOrderStatus } from "redux/slices/dashboard";
+import { editOrderQuantity } from "redux/slices/dashboard";
 import { useAppDispatch } from "redux/store/hooks";
-
-import { TStatus } from "types";
 
 type TProps = {
   orderId: number;
-  status: TStatus;
+  quantity: number;
   isOpen: boolean;
   onClose: () => void;
 };
 
-const EditOrder: React.FC<TProps> = ({ isOpen, onClose, status, orderId }) => {
+const EditOrder: React.FC<TProps> = ({
+  isOpen,
+  onClose,
+  quantity,
+  orderId,
+}) => {
   const [showModal, setShowModal] = useState(isOpen);
   const dispatch = useAppDispatch();
 
-  const [selectedStatus, setSelectedStatus] = useState<TStatus>(status);
+  const [selectedQuantity, setSelectedQuantity] = useState<number>(quantity);
 
   // handling modal close
   const handleClose = useCallback(() => {
@@ -26,9 +29,9 @@ const EditOrder: React.FC<TProps> = ({ isOpen, onClose, status, orderId }) => {
 
   const handleUpdateOrder = () => {
     dispatch(
-      updateOrderStatus({
+      editOrderQuantity({
         id: orderId,
-        status: selectedStatus,
+        quantity: selectedQuantity,
       })
     );
     onClose();
@@ -72,18 +75,13 @@ const EditOrder: React.FC<TProps> = ({ isOpen, onClose, status, orderId }) => {
             </div>
             <div className="relative p-6 flex flex-row items-center gap-2 justify-center">
               <div className="flex flex-row gap-2 items-center">
-                <label htmlFor="status">Status</label>
-                <select
-                  name="status"
-                  id="status"
-                  value={selectedStatus}
-                  onChange={(e) => setSelectedStatus(e.target.value as TStatus)}
-                >
-                  <option value="Pending">Pending</option>
-                  <option value="Confirmed">Confirmed</option>
-                  <option value="Refunded">Refunded</option>
-                  <option value="Delivered">Delivered</option>
-                </select>
+                <label htmlFor="status">Quantity</label>
+                <input
+                  type="text"
+                  value={selectedQuantity}
+                  onChange={(e) => setSelectedQuantity(Number(e.target.value))}
+                  className="border border-blue-300 rounded-xl outline-none focus:outline-none py-2 px-3 font-normal text-sm text-neutral-700"
+                />
               </div>
             </div>
             <div className="flex flex-row justify-center items-center p-6">
